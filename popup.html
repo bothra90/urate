@@ -42,21 +42,17 @@ div:hover {
 </style>
 <script>
 function click(color) {
+    var rand='var obj=document.getElementById("watch-related").children; console.log("kajfsdkdf"); console.log(obj);';
   chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundColor='" + color.id + "'"});
-  window.close();
-}
-
-function clickn(color) {
-  var rand='var obj=document.getElementById("watch-related").innerHTML(); console.log("kajfsdkdf"); console.log(obj);';
-  
+      {code:"document.body.style.backgroundColor='" + color.id + "' ; console.log(\"fucker\");"});
   chrome.tabs.executeScript(null,
       {code:rand});
   window.close();
 }
 
+
 </script>
-<div onclick="clickn(this)" id="red">red</div>
+<div onclick="click(this)" id="red">red</div>
 <div onclick="click(this)" id="blue">blue</div>
 <div onclick="click(this)" id="green">green</div>
 <div onclick="click(this)" id="yellow">yellow</div>
