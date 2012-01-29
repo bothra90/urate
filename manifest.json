@@ -1,6 +1,10 @@
 {
   "name": "A browser action with a popup that changes the page color.",
   "version": "1.0",
+  "content_scripts":[{
+  "js":["script.js"],
+  "matches":["*://*.youtube.com/*"]
+  }],
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
