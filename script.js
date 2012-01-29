@@ -9,15 +9,9 @@ for (i= 0; i<len; i++){
 	
 	var v_id=suggestion.children[0].getAttribute("href").slice(9,20);
 	console.log(v_id);
+	var numlikes,numdislikes;
+	chrome.extension.sendRequest({video_id : v_id},function(res){numlikes=4;numdislikes=2;var info = document.createTextNode("Likes: "+numlikes+", Dislikes: "+ numdislikes+" ");
+	suggestion.children[0].appendChild(info);});
 	
-	chrome.extension.sendRequest({video_id : v_id},function(res){console.log(res.w_id)});
-	
-	/*
-	var str="http://gdata.youtube.com/feeds/api/videos/"+v_id+"?v=2&amp;alt=json-in-script&amp;callback=klas";
-	//var str = "http://gdata.youtube.com/feeds/users/GoogleDevelopers/uploads?v=2&alt=json-in-script&format=5&callback=klas"
-	var script_= background.createElement("JSOn_Script");
-	script_.type="text/javascript";
-	script_.src=str;
-	background.body.appendChild(script_);
-	*/
+
 }

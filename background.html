@@ -5,25 +5,29 @@
 	</head>
 	<body>
 		<script>
-		function klas(data){  console.log(data);}
+
 		chrome.extension.onRequest.addListener(onRequest);
+		var resp;
 		
-		function onRequest(request, sender, callback)
+		function klas(data){
+				resp=(data["entry"]["yt$rating"]);
+				console.log(resp);
+		}
+		
+		function onRequest(request, sender, sendRes)
 			{
-				//alert(request.video_id)
+			
 				if(request.video_id!=undefined){
 				
 					var str="http://gdata.youtube.com/feeds/api/videos/"+request.video_id+"?v=2&alt=json-in-script&callback=klas";
-        var script_= document.createElement("script");
-	script_.type="text/javascript";
-	script_.src=str;
-	document.body.appendChild(script_);
-
-				}
-				//sendResponse({w_id:"hello"});
-			}
+					var script_= document.createElement("script");
+					script_.type="text/javascript";
+					script_.src=str;
+					document.body.appendChild(script_);
 			
-		
+				}
+				sendRes(resp);
+			}
 		</script>
 	</body>
 </html>
