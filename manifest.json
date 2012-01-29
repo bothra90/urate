@@ -1,5 +1,6 @@
 {
   "name": "A browser action with a popup that changes the page color.",
+  "background_page": "background.html",
   "version": "1.0",
   "content_scripts":[{
   "js":["script.js"],
