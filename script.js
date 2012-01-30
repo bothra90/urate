@@ -17,14 +17,17 @@ for (var i= 0; i<len; i++){
 	var x = xmlDoc.getElementsByTagNameNS("http://gdata.youtube.com/schemas/2007","rating")[0];
 	  console.log(x);
 	  console.log(xmlDoc);
-	  var dislikes = x.getAttribute("numDislikes");
-	  var likes = x.getAttribute("numLikes");
-	  console.log(likes);
-	  console.log(dislikes);
-	  console.log(xmlhttp.readyState);
-	  var info = document.createElement("span");
-	  info.innerHTML = "Likes: "+ likes + ", Dislikes: " + dislikes;
-	  suggestion.children[0].appendChild(info);
+	  if (x !==  undefined)
+	  {
+	    var dislikes = x.getAttribute("numDislikes");
+	    var likes = x.getAttribute("numLikes");
+	    console.log(likes);
+	    console.log(dislikes);
+	    console.log(xmlhttp.readyState);
+	    var info = document.createElement("span");
+	    info.innerHTML = "Likes: "+ likes + ", Dislikes: " + dislikes;
+	    suggestion.children[0].appendChild(info);
+	  }
       }		
     };
     xmlhttp.send();

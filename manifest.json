@@ -3,15 +3,13 @@
   "background_page": "background.html",
   "version": "1.0",
   "content_scripts":[{
-  "js":["script.js"],
-  "matches":["*://*.youtube.com/*"]
+      "js":["script.js"],
+      "matches":["*://*.youtube.com/*"]
   }],
   "permissions": [
     "tabs",
-    "http://www.youtube.com/*"
+    "http*://*.youtube.com/*"
   ],
-  "content_scripts":[{ "matches": ["http://*/*"],"js": ["script.js"]} ],
-
   "page_action": {
       "default_title": "Display Like/Dislike info underneath suggested video",
       "default_icon": "icon.png",
