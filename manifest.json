@@ -2,10 +2,13 @@
   "name": "A browser action with a popup that changes the page color.",
   "version": "1.0",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*"
+    "tabs",
+    "http://www.youtube.com/*"
   ],
-  "browser_action": {
-      "default_title": "Set this page's color.",
+  "content_scripts":[{ "matches": ["http://*/*"],"js": ["script.js"]} ],
+
+  "page_action": {
+      "default_title": "Display Like/Dislike info underneath suggested video",
       "default_icon": "icon.png",
       "popup": "popup.html"
   }
